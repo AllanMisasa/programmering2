@@ -152,3 +152,69 @@ INSERT INTO Persons VALUES (8, "Jensen", "Søren", "Vejgade", "Odense C");
 
 ---
 
+## Ændre/tilføje kolonner
+
+* Gøres via ALTER table kommandoen + et keyword
+* Tilføj kolonne med ADD
+```sql
+ALTER TABLE Customers  
+ADD Email varchar(255);
+```
+
+---
+
+Ændre navn på kolonne
+
+```sql
+ALTER TABLE _table_name_  
+RENAME COLUMN _old_name_ to _new_name_;
+```
+
+---
+
+## Specielt for SQLite
+
+* Med ALTER er der specielle begrænsninger i SQLite sammenlignet med andre sprog.
+* https://www.sqlite.org/lang_altertable.html
+
+---
+## Datoer og tidstempler
+
+* Detaljer her: https://www.sqlite.org/lang_datefunc.html
+* Læg mærke til at der ikke er en datatype til datoer og tider
+* Anbefalingen er at bruge unix epochs, som kan gemmes som integer
+
+---
+
+## Unix epochs
+
+* I Linux kan terminalkommandoen `date +%s` give dig Unix epoch - sekunder siden 1. Januar 1970, UTC. 
+* Output indsætter du så bare i shell script f.eks. via et variabel
+
+---
+## Unix epochs i C++
+
+```cpp
+#include <ctime>
+#include <iostream>
+ 
+int main()
+{
+    std::time_t result = std::time(nullptr);
+    std::cout << std::asctime(std::localtime(&result))
+              << result << " seconds since the Epoch\n";
+}
+```
+
+---
+## Konverter tilbage til human-readable dato og tid fra Unix
+
+```cpp
+#include <ctime>
+std::asctime(std::localtime(&unix))
+```
+hvor unix er variablet for dit unix timestamp.
+```bash
+date -d @1738824265
+```
+---
