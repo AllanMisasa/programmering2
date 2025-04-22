@@ -26,7 +26,7 @@
 
 * C++ er superbt når vi skal snakke med operativsystemet; f.eks. programmer i Linux såsom Mosquitto og SQLite, eller når vi skal arbejde med indlejrede systemer
 * Dog er det som efterkommer af C stadig besværligt med webapplikationer
-* Her kommer Python ind - det er bedre egnet til API-kald, hosting af websider, samt 
+* Her kommer Python ind - det er bedre egnet til API-kald, hosting af websider, samt dataanalyse 
 
 ---
 
@@ -58,10 +58,42 @@
     * Host på web
     * I arbejder med API'er 
     * Machine learning og AI af ikke-åbenlyse årsager...
+---
+
+## Streamlit
+
+![](streamlit-dash.png)
 
 ---
 
 ## Python til Streamlit - hvorfor?
 
 * Streamlit er teknisk set en webserver med en grafisk brugerflade (2 ting C++ ikke gør let)
-* 
+* Der er indbygget forbindelsesscripts til f.eks. databaser, JSON-filer, CSV-filer osv.
+
+---
+
+## Basalt element på dashboard
+:
+```Python
+import plotly.express as px  # interactive charts
+import streamlit as st  
+
+
+```
+
+---
+
+## Forbindelse til database eksempel
+
+```Python
+import streamlit as st # Ækvivalent til #include i C++
+
+conn = st.connection('test.db', type='sql') # Variable kræver ikke typedeklaration
+with conn.session as s:
+    s.execute('CREATE TABLE IF NOT EXISTS sensors ( TEXT, pet TEXT);')
+    s.commit()
+
+pet_owners = conn.query('select * from table_name')
+st.dataframe(pet_owners)
+```
