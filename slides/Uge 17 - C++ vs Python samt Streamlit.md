@@ -73,13 +73,35 @@
 
 ---
 
+## Eksempler
+
+* De næste eksempler bliver også vist på tavlen og gennemgået i flere detaljer.
+
+---
+
 ## Basalt element på dashboard
-:
+
 ```Python
-import plotly.express as px  # interactive charts
-import streamlit as st  
+import streamlit as st 
+st.title("Sensor Dashboard")
 
+sensor1, sensor2 = st.columns(2)
 
+sensor1.metric(
+    label="Temp",
+    value = 30)
+
+sensor2.metric(
+    label="Humidity",
+    value = 60)
+```
+
+## Graf på dashboard 
+
+```Python
+st.header("Graf over sidste 7 temperaturmålinger") # HTML header
+chart_data = [22, 25, 23, 27, 30, 33, 35] # Array med integers
+st.line_chart(chart_data)
 ```
 
 ---
