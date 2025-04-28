@@ -96,6 +96,8 @@ sensor2.metric(
     value = 60)
 ```
 
+---
+
 ## Graf på dashboard 
 
 ```Python
