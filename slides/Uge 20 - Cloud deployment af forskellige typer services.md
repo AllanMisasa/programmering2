@@ -1,6 +1,10 @@
-
 ---
-# Uge 20 cloud deployment
+marp: true
+title: Uge 20 cloud deployment
+theme: default
+paginate: true
+---
+# Uge 20 - cloud deployment
 ---
 ## Agenda
 - Typer af cloud services
@@ -41,7 +45,7 @@
 ## Opgave 0 - hvilken aaS?
 - Antag at host/provider sørger for så meget som nødvendigt for at i kan arbejde med servicen/applikationen
 - Med den antagelse, hvor vil i placere hver platform i ovenstående diagram over Google Cloud Platform services?
-- Diskutér i grupper og opnå en enighed
+- Diskutér i grupper og opnå en enighed - bedste gæt på 5 minutter.
 - Hint: Godt overblik på linket i skulle læse til forberedelse.
 ---
 ## Deployment af services og applikationer
@@ -58,4 +62,20 @@
     - Clone til VPS. 
     - Installér alt der er nødvendigt for jeres Docker installation
     - Byg jeres services via Docker.
+---
+## Opgave 1 - Deployment arkitektur
+- I grupper - 15 minutter til at nå en beslutning
+- Vi har stadig MQTT, Streamlit og database i systemet
+- Hvilken type aaS vurderer i egner sig til de forskellige komponenter? Det kan være flere typer på et komponent.
+- Beslut nu hvilken cloud provider i bruger til de forskellige. Vigtigt at holde jer indenfor HiveMQ, Hetzner, AWS, Huggingface eller ækvivalente. Det vigtige er at i kan vælge.
+---
+## Opgave 2 - Hvilken type aaS 2?
+- De cloud providers i har besluttet jer for at bruge, hvilken type aaS er de?
+- Giver den type mening for det færdige setup?
+---
+## Opgave 3 - Deployment
+- Med en nøje udvalgt provider og platform, så er det på tide at deploy vores systemer på cloud.
+- Start med MQTT
+- Derefter database - her kan det tage tid at forbinde MQTT og database afhængigt af hvilke platforme i har valgt.
+- Til sidst find ud af hvordan i vil køre Streamlit - det er normalt okay at køre lokalt. Kan i forklare hvorfor?
 
