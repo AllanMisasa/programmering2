@@ -1,22 +1,23 @@
----
-theme: default
-marp: true
-paginate: true
----
 # Uge 21 - NoSQL databaser
+
 ---
+
 ## Agenda
 - Teori om NoSQL
 - Specifikt om MongoDB og dets software
 - Workshop i MongoDB's programmer
 - Workshop i MongoSh og MongoDB's C++ interface
+
 ---
+
 ## Hvad er en NoSQL database?
 - NoSQL - *N*ot *O*nly *S*equel
 - Relativt ustruktureret ifht. SQL 
 - Mere skalerbart
 - JSON er dataformatet
+
 ---
+
 ## Hvorfor bruge NoSQL?
 - Det er mere udviklervenligt da dataen er i JSON format
 - De fleste programmeringssprog har direkte JSON-kompabilitet, så det er let at integrere i programmer 
